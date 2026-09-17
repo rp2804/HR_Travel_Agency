@@ -26,7 +26,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
   return (
     <div className="bg-white rounded-2xl p-6 sm:p-7 shadow-card border border-slate-100 hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1 group">
       {/* Icon container */}
-      <div className="w-13 h-13 rounded-xl bg-orange-50 text-brand-accent flex items-center justify-center mb-5 group-hover:bg-brand-accent group-hover:text-white transition-colors duration-300">
+      <div className="w-12 h-12 rounded-xl bg-orange-50 text-brand-accent flex items-center justify-center mb-5 group-hover:bg-brand-accent group-hover:text-white transition-colors duration-300">
         <Icon className="w-6 h-6" />
       </div>
 

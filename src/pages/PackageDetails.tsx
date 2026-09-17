@@ -102,7 +102,7 @@ export const PackageDetails: React.FC = () => {
           </div>
           <div className="hidden md:grid grid-rows-2 gap-3">
             {packageItem.gallery && packageItem.gallery.slice(1, 3).map((img, idx) => (
-              <div key={idx} className="h-full overflow-hidden">
+              <div key={idx} className="aspect-[4/3] overflow-hidden bg-slate-100">
                 <img
                   src={img}
                   alt={`${packageItem.title} preview ${idx + 1}`}

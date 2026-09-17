@@ -36,6 +36,20 @@ export default {
         '2xl': '1.25rem',
         '3xl': '1.75rem',
       },
+      keyframes: {
+        'pulse-slow': {
+          '0%, 100%': { transform: 'scale(1.05)' },
+          '50%': { transform: 'scale(1.08)' },
+        },
+        'spin-slow': {
+          'from': { transform: 'rotate(0deg)' },
+          'to': { transform: 'rotate(360deg)' },
+        },
+      },
+      animation: {
+        'pulse-slow': 'pulse-slow 8s ease-in-out infinite',
+        'spin-slow': 'spin-slow 12s linear infinite',
+      },
     },
   },
   plugins: [],

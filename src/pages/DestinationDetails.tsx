@@ -6,7 +6,7 @@ import { packages } from "../data/packages";
 import { Breadcrumb } from "../components/common/Breadcrumb";
 import { PackageCard } from "../components/cards/PackageCard";
 import { useEnquiry } from "../hooks/useEnquiry";
-import { siteConfig } from "../../src/config/siteConfig";
+import { siteConfig } from "../config/siteConfig";
 import { getWhatsAppUrl, createDestinationWhatsAppMessage } from "../utils/whatsapp";
 
 export const DestinationDetails: React.FC = () => {
