@@ -78,7 +78,7 @@ export const Home: React.FC = () => {
         <div className="mt-12 text-center">
           <Link
             to="/destinations"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border-2 border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white font-semibold text-sm transition-all cursor-pointer"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border-2 border-brand-navy dark:border-brand-accent text-brand-navy dark:text-white hover:bg-brand-navy dark:hover:bg-brand-accent hover:text-white font-semibold text-sm transition-all cursor-pointer"
           >
             <span>View All Destinations</span>
             <ArrowRight className="w-4 h-4" />
@@ -87,17 +87,17 @@ export const Home: React.FC = () => {
       </section>
 
       {/* SECTION 4: FEATURED TOUR PACKAGES */}
-      <section className="py-20 sm:py-28 bg-white border-y border-slate-100">
+      <section className="py-20 sm:py-28 bg-white dark:bg-slate-900 border-y border-slate-100 dark:border-slate-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12">
             <div>
-              <span className="inline-block px-3.5 py-1 text-xs font-semibold tracking-wider uppercase text-brand-accent bg-brand-accent-light rounded-full mb-3 border border-orange-200">
+              <span className="inline-block px-3.5 py-1 text-xs font-semibold tracking-wider uppercase text-brand-accent bg-brand-accent-light dark:bg-slate-800 dark:border-slate-700 rounded-full mb-3 border border-orange-200">
                 Handcrafted Itineraries
               </span>
-              <h2 className="text-3xl sm:text-4xl font-bold font-serif text-slate-900">
+              <h2 className="text-3xl sm:text-4xl font-bold font-serif text-slate-900 dark:text-white">
                 Popular Tour Packages
               </h2>
-              <p className="mt-2 text-base text-slate-600">
+              <p className="mt-2 text-base text-slate-600 dark:text-slate-300">
                 Choose a trip that fits your style with verified hotels and private transport.
               </p>
             </div>
@@ -141,7 +141,7 @@ export const Home: React.FC = () => {
       <HowItWorks />
 
       {/* SECTION 9: TESTIMONIALS */}
-      <section className="py-20 sm:py-28 bg-brand-sand border-t border-slate-100">
+      <section className="py-20 sm:py-28 bg-brand-sand dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="Traveler Reviews"
@@ -155,24 +155,24 @@ export const Home: React.FC = () => {
             ))}
           </div>
 
-          <div className="mt-8 text-center text-xs text-slate-400">
+          <div className="mt-8 text-center text-xs text-slate-400 dark:text-slate-500">
             * Sample traveler reviews reflecting authentic agency itinerary feedback.
           </div>
         </div>
       </section>
 
       {/* SECTION 10: TRAVEL GALLERY */}
-      <section className="py-20 sm:py-28 bg-white border-y border-slate-100">
+      <section className="py-20 sm:py-28 bg-white dark:bg-slate-900 border-y border-slate-100 dark:border-slate-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12">
             <div>
-              <span className="inline-block px-3.5 py-1 text-xs font-semibold tracking-wider uppercase text-brand-accent bg-brand-accent-light rounded-full mb-3 border border-orange-200">
+              <span className="inline-block px-3.5 py-1 text-xs font-semibold tracking-wider uppercase text-brand-accent bg-brand-accent-light dark:bg-slate-800 dark:border-slate-700 rounded-full mb-3 border border-orange-200">
                 Visual Stories
               </span>
-              <h2 className="text-3xl sm:text-4xl font-bold font-serif text-slate-900">
+              <h2 className="text-3xl sm:text-4xl font-bold font-serif text-slate-900 dark:text-white">
                 Travel Moments Captured
               </h2>
-              <p className="mt-2 text-base text-slate-600">
+              <p className="mt-2 text-base text-slate-600 dark:text-slate-300">
                 A glimpse of serene tea estates, sacred stone carvings, and sun-kissed beaches.
               </p>
             </div>

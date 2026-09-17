@@ -4,6 +4,7 @@ import { Footer } from "./Footer";
 import { WhatsAppButton } from "../common/WhatsAppButton";
 import { EnquiryModal } from "../forms/EnquiryModal";
 import { ScrollToTop } from "../common/ScrollToTop";
+import { ThemeProvider } from "../../context/ThemeContext";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -35,21 +36,24 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   };
 
   return (
-    <EnquiryContext.Provider value={{ openEnquiry: handleOpenEnquiry }}>
-      <ScrollToTop />
-      <div className="flex flex-col min-h-screen bg-[#FAF8F5] text-slate-900 font-sans selection:bg-brand-accent selection:text-white">
-        <Navbar onOpenEnquiry={() => handleOpenEnquiry()} />
-        <main className="flex-1 w-full">{children}</main>
-        <Footer />
-        <WhatsAppButton />
-        <EnquiryModal
-          isOpen={enquiryOpen}
-          onClose={handleCloseEnquiry}
-          initialDestination={enquiryDetails.destination}
-          initialPackageTitle={enquiryDetails.packageTitle}
-          packagePrice={enquiryDetails.price}
-        />
-      </div>
-    </EnquiryContext.Provider>
+    <ThemeProvider>
+      <EnquiryContext.Provider value={{ openEnquiry: handleOpenEnquiry }}>
+        <ScrollToTop />
+        <div className="flex flex-col min-h-screen bg-[#FAF8F5] dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans selection:bg-brand-accent selection:text-white transition-colors duration-300">
+          <Navbar onOpenEnquiry={() => handleOpenEnquiry()} />
+          <main className="flex-1 w-full">{children}</main>
+          <Footer />
+          <WhatsAppButton />
+          <EnquiryModal
+            isOpen={enquiryOpen}
+            onClose={handleCloseEnquiry}
+            initialDestination={enquiryDetails.destination}
+            initialPackageTitle={enquiryDetails.packageTitle}
+            packagePrice={enquiryDetails.price}
+          />
+        </div>
+      </EnquiryContext.Provider>
+    </ThemeProvider>
   );
 };
+

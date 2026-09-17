@@ -16,8 +16,7 @@ export const Hero: React.FC<HeroProps> = ({ onPlanTrip }) => {
           src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=2000&q=85"
           alt="Scenic Nilgiri Hills and tea plantation at sunrise"
           className="w-full h-full object-cover object-center scale-105 animate-pulse-slow"
-          // @ts-expect-error fetchpriority is a modern standard attribute
-          fetchpriority="high"
+          fetchPriority="high"
           loading="eager"
         />
         {/* Multistage gradient overlay for high contrast and readability */}

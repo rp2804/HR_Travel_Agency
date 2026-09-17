@@ -169,7 +169,7 @@ export const packages: Package[] = [
     durationNights: 3,
     price: 18999,
     originalPrice: 22000,
-    image: "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1000&q=80",
     category: "Pilgrimage",
     badge: "Best Seller",
     featured: true,

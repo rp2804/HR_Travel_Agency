@@ -5,7 +5,7 @@ import { siteConfig } from "../../config/siteConfig";
 
 export const WhyUsSection: React.FC = () => {
   return (
-    <section className="py-16 sm:py-24 bg-brand-sand">
+    <section className="py-16 sm:py-24 bg-brand-sand dark:bg-slate-950 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Why Travel With Us"

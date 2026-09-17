@@ -15,14 +15,14 @@ const categoryIconMap: Record<string, React.ReactNode> = {
 
 export const CategoryChips: React.FC = () => {
   return (
-    <section className="py-14 sm:py-20 bg-brand-sand border-y border-slate-100">
+    <section className="py-14 sm:py-20 bg-brand-sand dark:bg-slate-950 border-y border-slate-100 dark:border-slate-800 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8">
           <div>
             <span className="text-xs font-semibold uppercase tracking-wider text-brand-accent mb-2 block">
               Curated Collections
             </span>
-            <h2 className="text-2xl sm:text-3xl font-bold font-serif text-slate-900">
+            <h2 className="text-2xl sm:text-3xl font-bold font-serif text-slate-900 dark:text-white">
               Explore by Travel Style
             </h2>
           </div>
@@ -41,15 +41,15 @@ export const CategoryChips: React.FC = () => {
             <Link
               key={cat.id}
               to={`/packages?category=${encodeURIComponent(cat.name)}`}
-              className="flex flex-col items-center text-center p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/80 shadow-subtle hover:shadow-card hover:border-brand-accent/40 hover:-translate-y-1 transition-all group"
+              className="flex flex-col items-center text-center p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-subtle hover:shadow-card hover:border-brand-accent/40 hover:-translate-y-1 transition-all group"
             >
-              <div className="w-12 h-12 rounded-xl bg-orange-50 text-brand-accent group-hover:bg-brand-accent group-hover:text-white flex items-center justify-center transition-colors mb-3">
+              <div className="w-12 h-12 rounded-xl bg-orange-50 dark:bg-slate-800 text-brand-accent group-hover:bg-brand-accent group-hover:text-white flex items-center justify-center transition-colors mb-3">
                 {categoryIconMap[cat.icon] || <Compass className="w-5 h-5" />}
               </div>
-              <h3 className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-brand-accent transition-colors font-serif">
+              <h3 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white group-hover:text-brand-accent transition-colors font-serif">
                 {cat.name}
               </h3>
-              <p className="text-[11px] text-slate-500 mt-1 line-clamp-1 hidden sm:block">
+              <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1 line-clamp-1 hidden sm:block">
                 View trips
               </p>
             </Link>

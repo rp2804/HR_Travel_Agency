@@ -5,7 +5,7 @@ import { siteConfig } from "../../config/siteConfig";
 
 export const StorySection: React.FC = () => {
   return (
-    <section className="py-16 sm:py-24 bg-white overflow-hidden">
+    <section className="py-16 sm:py-24 bg-white dark:bg-slate-900 overflow-hidden transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Visual Column */}
@@ -22,15 +22,15 @@ export const StorySection: React.FC = () => {
             </div>
 
             {/* Floating Experience Badge */}
-            <div className="absolute -bottom-6 -right-4 sm:right-6 bg-white rounded-2xl p-4 sm:p-5 shadow-floating border border-slate-100 flex items-center gap-3.5 max-w-xs">
-              <div className="w-12 h-12 rounded-xl bg-orange-50 text-brand-accent flex items-center justify-center shrink-0">
+            <div className="absolute -bottom-6 -right-4 sm:right-6 bg-white dark:bg-slate-800 rounded-2xl p-4 sm:p-5 shadow-floating border border-slate-100 dark:border-slate-700 flex items-center gap-3.5 max-w-xs">
+              <div className="w-12 h-12 rounded-xl bg-orange-50 dark:bg-slate-700 text-brand-accent flex items-center justify-center shrink-0">
                 <Award className="w-6 h-6" />
               </div>
               <div>
-                <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                <p className="text-xs font-bold text-slate-400 dark:text-slate-400 uppercase tracking-wider">
                   Established in {siteConfig.establishedYear}
                 </p>
-                <p className="text-sm font-bold text-slate-900 font-serif">
+                <p className="text-sm font-bold text-slate-900 dark:text-white font-serif">
                   Hundreds of Happy Families
                 </p>
               </div>
@@ -42,37 +42,37 @@ export const StorySection: React.FC = () => {
 
           {/* Text Column */}
           <div className="space-y-6">
-            <div className="inline-block px-3.5 py-1 text-xs font-semibold tracking-wider uppercase text-brand-accent bg-brand-accent-light rounded-full border border-orange-200">
+            <div className="inline-block px-3.5 py-1 text-xs font-semibold tracking-wider uppercase text-brand-accent bg-brand-accent-light dark:bg-slate-800 dark:border-slate-700 rounded-full border border-orange-200">
               Our Story & Passion
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-slate-900 leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-slate-900 dark:text-white leading-tight">
               More Than a Trip
             </h2>
 
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
               From weekend escapes to carefully planned family holidays, we help travellers explore South India with comfort, flexibility and local insight.
             </p>
 
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
               We grew up exploring every winding hairpin bend of the Nilgiris, every spice aroma of the Wayanad hills, and the sacred temple corridors of Tamil Nadu. We don't believe in rushed tourist buses or rigid schedules — our holidays are paced for real memories, quiet sunrise walks, and authentic regional feasts.
             </p>
 
             {/* Key trust bullets */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-              <div className="flex items-center gap-2 text-sm font-medium text-slate-800">
+              <div className="flex items-center gap-2 text-sm font-medium text-slate-800 dark:text-slate-200">
                 <CheckCircle2 className="w-4 h-4 text-brand-accent shrink-0" />
                 <span>Private & clean vehicles</span>
               </div>
-              <div className="flex items-center gap-2 text-sm font-medium text-slate-800">
+              <div className="flex items-center gap-2 text-sm font-medium text-slate-800 dark:text-slate-200">
                 <CheckCircle2 className="w-4 h-4 text-brand-accent shrink-0" />
                 <span>Handpicked resort stays</span>
               </div>
-              <div className="flex items-center gap-2 text-sm font-medium text-slate-800">
+              <div className="flex items-center gap-2 text-sm font-medium text-slate-800 dark:text-slate-200">
                 <CheckCircle2 className="w-4 h-4 text-brand-accent shrink-0" />
                 <span>No hidden driver fees</span>
               </div>
-              <div className="flex items-center gap-2 text-sm font-medium text-slate-800">
+              <div className="flex items-center gap-2 text-sm font-medium text-slate-800 dark:text-slate-200">
                 <CheckCircle2 className="w-4 h-4 text-brand-accent shrink-0" />
                 <span>Instant WhatsApp support</span>
               </div>
@@ -81,7 +81,7 @@ export const StorySection: React.FC = () => {
             <div className="pt-4">
               <Link
                 to="/about"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand-navy hover:bg-brand-navy-light text-white text-sm font-semibold shadow-md transition-all group cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand-navy dark:bg-brand-accent hover:bg-brand-navy-light dark:hover:bg-brand-accent-hover text-white text-sm font-semibold shadow-md transition-all group cursor-pointer"
               >
                 <span>Learn About Us</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

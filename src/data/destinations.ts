@@ -171,7 +171,7 @@ export const destinations: Destination[] = [
     state: "Tamil Nadu",
     slug: "rameswaram",
     featured: true,
-    image: "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=80",
     shortDescription: "Sacred island city, majestic thousand-pillar temple corridor, and ghost town of Dhanushkodi.",
     description:
       "Connected to mainland India by the engineering marvel of the Pamban Bridge, Rameswaram is one of Hinduism's holiest Char Dham pilgrimage sites. The Ramanathaswamy Temple features the longest pillared corridor in the world.",
