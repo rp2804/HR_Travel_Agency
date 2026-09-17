@@ -45,7 +45,7 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  agencyName: "Southern Trails",
+  agencyName: "HR Travels",
   tagline: "Discover South India, Your Way.",
   shortDescription:
     "Handcrafted holidays, unforgettable journeys and local experiences across Tamil Nadu, Kerala, Karnataka and beyond.",
@@ -81,7 +81,7 @@ export const siteConfig: SiteConfig = {
   branding: {
     primaryColor: "#0F2439",
     accentColor: "#E07A2B",
-    logoText: "Southern Trails",
+    logoText: "HR Travels",
     badgeText: "Tamil Nadu & South India Specialists",
   },
   trustHighlights: [

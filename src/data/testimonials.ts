@@ -18,7 +18,7 @@ export const testimonials: Testimonial[] = [
     location: "Bengaluru, Karnataka",
     tripName: "Kerala Backwaters & Munnar Escapade (5D/4N)",
     quote:
-      "Taking elderly parents on vacation can be stressful, but Southern Trails handled vehicle transfers and hotel check-ins flawlessly. The Alleppey private houseboat was the highlight — fresh food and serene backwaters!",
+      "Taking elderly parents on vacation can be stressful, but HR Travels handled vehicle transfers and hotel check-ins flawlessly. The Alleppey private houseboat was the highlight — fresh food and serene backwaters!",
     rating: 5,
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80",
     date: "January 2026",
