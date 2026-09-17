@@ -134,7 +134,7 @@ export const ContactForm: React.FC = () => {
           <input
             type="tel"
             required
-            placeholder="+91 98401 23456"
+            placeholder="+91 8682957486"
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
             className={`w-full px-4 py-2.5 rounded-xl border text-sm text-slate-800 focus:outline-none focus:ring-2 ${

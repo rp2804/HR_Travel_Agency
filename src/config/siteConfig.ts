@@ -7,7 +7,7 @@ export interface SiteConfig {
     phone: string;
     phoneFormatted: string;
     secondaryPhone?: string;
-    whatsapp: string; // digits only with country code, e.g., 919840123456
+    whatsapp: string; // digits only with country code, e.g., 
     whatsappFormatted: string;
     email: string;
     supportEmail: string;
@@ -51,11 +51,11 @@ export const siteConfig: SiteConfig = {
     "Handcrafted holidays, unforgettable journeys and local experiences across Tamil Nadu, Kerala, Karnataka and beyond.",
   establishedYear: 2018,
   contact: {
-    phone: "+91 98401 23456",
-    phoneFormatted: "+91 98401 23456",
-    secondaryPhone: "+91 44 2434 5678",
-    whatsapp: "919840123456",
-    whatsappFormatted: "+91 98401 23456",
+    phone: "+91 8682957486",
+    phoneFormatted: "+91 8682957486",
+    secondaryPhone: "+91 72000 65465",
+    whatsapp: "7200065465",
+    whatsappFormatted: "+91 7200065465",
     email: "enquiry@southerntrails.in",
     supportEmail: "support@southerntrails.in",
     address: {
