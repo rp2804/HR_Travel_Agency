@@ -51,32 +51,32 @@ export const siteConfig: SiteConfig = {
     "Handcrafted holidays, unforgettable journeys and local experiences across Tamil Nadu, Kerala, Karnataka and beyond.",
   establishedYear: 2018,
   contact: {
-    phone: "+91 8682957486",
-    phoneFormatted: "+91 8682957486",
-    secondaryPhone: "+91 72000 65465",
-    whatsapp: "7200065465",
-    whatsappFormatted: "+91 7200065465",
-    email: "enquiry@southerntrails.in",
-    supportEmail: "support@southerntrails.in",
+    phone: "+91 9876543210",
+    phoneFormatted: "+91 98765 43210",
+    secondaryPhone: "+91 8765432109",
+    whatsapp: "9876543210",
+    whatsappFormatted: "+91 98765 43210",
+    email: "enquiry@hrtravels.example", // Placeholder email - update with actual business email
+    supportEmail: "support@hrtravels.example", // Placeholder email - update with actual business email
     address: {
-      street: "No. 42, 2nd Floor, Venkatanarayana Road",
-      locality: "T. Nagar",
-      city: "Chennai",
-      state: "Tamil Nadu",
-      pincode: "600017",
+      street: "123, Galaxy Tower, MG Road",
+      locality: "Indiranagar",
+      city: "Bangalore",
+      state: "Karnataka",
+      pincode: "560038",
       country: "India",
     },
     officeHours: "Mon - Sat: 9:00 AM - 7:30 PM (IST)",
   },
   social: {
-    instagram: "https://instagram.com",
-    facebook: "https://facebook.com",
-    youtube: "https://youtube.com",
-    twitter: "https://twitter.com",
+    instagram: "", // Add actual Instagram profile URL when available
+    facebook: "", // Add actual Facebook page URL when available
+    youtube: "", // Add actual YouTube channel URL when available
+    twitter: "", // Add actual Twitter/X profile URL when available
   },
   maps: {
-    embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.8485233630267!2d80.2312!3d13.0405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526655a6d54d9b%3A0xb3a32f91a670fa9!2sT.%20Nagar%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
-    directUrl: "https://maps.google.com/?q=T+Nagar+Chennai+Tamil+Nadu",
+    embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.823514343739!2d77.64108931482247!3d12.971598990861848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sMG%20Road%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1726651023007!5m2!1sen!2sin",
+    directUrl: "https://maps.google.com/?q=MG+Road+Indiranagar+Bangalore+Karnataka",
   },
   branding: {
     primaryColor: "#0F2439",

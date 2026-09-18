@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Send, CheckCircle2, MessageCircle, Phone, Mail } from "lucide-react";
+import { CheckCircle2, MessageCircle, Phone, Mail } from "lucide-react";
 import { siteConfig } from "../../config/siteConfig";
 import { getWhatsAppUrl, createFormEnquiryWhatsAppMessage } from "../../utils/whatsapp";
 import { EnquiryFormData } from "../../types";
@@ -48,10 +48,10 @@ export const ContactForm: React.FC = () => {
           <CheckCircle2 className="w-10 h-10" />
         </div>
         <h3 className="text-2xl font-bold font-serif text-slate-900">
-          Message Prepared Successfully!
+          Ready to Connect!
         </h3>
         <p className="text-slate-600 max-w-md mx-auto text-sm leading-relaxed">
-          Thank you, <strong className="text-slate-800">{formData.name}</strong>. To get instant quotation updates, please continue directly to our WhatsApp chat:
+          Thanks, <strong className="text-slate-800">{formData.name}</strong>! Your travel details are ready. Click below to open WhatsApp and chat with our travel planner for instant quotes.
         </p>
 
         <div className="pt-2 max-w-sm mx-auto">
@@ -105,7 +105,7 @@ export const ContactForm: React.FC = () => {
           Send Us an Enquiry
         </h3>
         <p className="text-xs sm:text-sm text-slate-500 mt-1">
-          Tell us about your upcoming vacation plans. We reply within 30 minutes during business hours.
+          Share your travel plans and we'll connect with you on WhatsApp for instant assistance.
         </p>
       </div>
 
@@ -221,9 +221,12 @@ export const ContactForm: React.FC = () => {
         type="submit"
         className="w-full py-3.5 px-6 bg-brand-accent hover:bg-brand-accent-hover text-white font-semibold rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 group cursor-pointer"
       >
-        <span>Submit Travel Enquiry</span>
-        <Send className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+        <span>Continue to WhatsApp</span>
+        <MessageCircle className="w-4 h-4 transition-transform group-hover:translate-x-1" />
       </button>
+      <p className="text-xs text-center text-slate-500 -mt-1">
+        Your details will be sent via WhatsApp for instant response
+      </p>
     </form>
   );
 };

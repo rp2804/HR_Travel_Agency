@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { X, CheckCircle2, MessageCircle, Phone, Mail, Send, Users, MapPin } from "lucide-react";
+import { X, CheckCircle2, MessageCircle, Phone, Mail, Users, MapPin } from "lucide-react";
 import { siteConfig } from "../../config/siteConfig";
 import { destinations } from "../../data/destinations";
 import { getWhatsAppUrl, createFormEnquiryWhatsAppMessage } from "../../utils/whatsapp";
@@ -11,6 +11,9 @@ interface EnquiryModalProps {
   initialDestination?: string;
   initialPackageTitle?: string;
   packagePrice?: number;
+  initialTravelDate?: string;
+  initialTravellers?: string;
+  initialTravelType?: string;
 }
 
 export const EnquiryModal: React.FC<EnquiryModalProps> = ({
@@ -19,15 +22,18 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
   initialDestination = "",
   initialPackageTitle = "",
   packagePrice,
+  initialTravelDate = "",
+  initialTravellers = "",
+  initialTravelType = "",
 }) => {
   const [formData, setFormData] = useState<EnquiryFormData>({
     name: "",
     phone: "",
     email: "",
     destination: initialDestination || (initialPackageTitle ? initialPackageTitle : ""),
-    travelDate: "",
-    travellers: "2 Adults",
-    travelType: "Family Holiday",
+    travelDate: initialTravelDate,
+    travellers: initialTravellers || "2 Adults (Couple)",
+    travelType: initialTravelType || "Family Holiday",
     message: "",
   });
 
@@ -41,6 +47,9 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
       setFormData((prev) => ({
         ...prev,
         destination: initialDestination || initialPackageTitle || prev.destination,
+        travelDate: initialTravelDate || prev.travelDate,
+        travellers: initialTravellers || prev.travellers,
+        travelType: initialTravelType || prev.travelType,
       }));
       document.body.style.overflow = "hidden";
     } else {
@@ -57,7 +66,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
       window.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "unset";
     };
-  }, [isOpen, initialDestination, initialPackageTitle]);
+  }, [isOpen, initialDestination, initialPackageTitle, initialTravelDate, initialTravellers, initialTravelType, onClose]);
 
   if (!isOpen) return null;
 
@@ -125,7 +134,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
           {!isSubmitted ? (
             <form onSubmit={handleSubmit} className="space-y-4">
               <p className="text-sm text-slate-600">
-                Share your trip ideas below. We will craft a customized itinerary and quote with zero booking commitment.
+                Share your details below and we'll connect with you on WhatsApp to craft your personalized itinerary.
               </p>
 
               {/* Name & Phone */}
@@ -261,9 +270,12 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                 type="submit"
                 className="w-full mt-2 py-3.5 px-4 bg-brand-accent hover:bg-brand-accent-hover text-white font-semibold rounded-xl shadow-md transition-all flex items-center justify-center gap-2 text-sm sm:text-base group cursor-pointer"
               >
-                <span>Get Free Custom Itinerary</span>
-                <Send className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <span>Continue to WhatsApp</span>
+                <MessageCircle className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>
+              <p className="text-xs text-center text-slate-500 -mt-1">
+                Your details will be sent via WhatsApp for instant assistance
+              </p>
             </form>
           ) : (
             /* Confirmation & WhatsApp Deep-link Screen */
@@ -274,10 +286,10 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
 
               <div>
                 <h3 className="text-xl font-bold text-slate-900 font-serif">
-                  Thanks, {formData.name.split(" ")[0]}!
+                  Ready to Connect, {formData.name.split(" ")[0]}!
                 </h3>
                 <p className="text-sm text-slate-600 mt-1 max-w-sm mx-auto">
-                  Your enquiry has been prepared. For the fastest assistance and customized quotes, tap below to chat directly with our planner:
+                  Your travel details are ready. Click below to open WhatsApp and chat directly with our travel planner for instant quotes and personalized recommendations.
                 </p>
               </div>
 

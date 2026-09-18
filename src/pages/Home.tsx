@@ -36,6 +36,9 @@ export const Home: React.FC = () => {
   }) => {
     openEnquiry({
       destination: criteria.destination,
+      travelDate: criteria.travelDate,
+      travellers: criteria.travellers,
+      travelType: criteria.travelType,
     });
   };
 

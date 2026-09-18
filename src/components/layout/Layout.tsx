@@ -11,7 +11,14 @@ interface LayoutProps {
 }
 
 export interface EnquiryContextType {
-  openEnquiry: (options?: { destination?: string; packageTitle?: string; price?: number }) => void;
+  openEnquiry: (options?: {
+    destination?: string;
+    packageTitle?: string;
+    price?: number;
+    travelDate?: string;
+    travellers?: string;
+    travelType?: string;
+  }) => void;
 }
 
 export const EnquiryContext = React.createContext<EnquiryContextType>({
@@ -24,9 +31,19 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     destination?: string;
     packageTitle?: string;
     price?: number;
+    travelDate?: string;
+    travellers?: string;
+    travelType?: string;
   }>({});
 
-  const handleOpenEnquiry = (options?: { destination?: string; packageTitle?: string; price?: number }) => {
+  const handleOpenEnquiry = (options?: {
+    destination?: string;
+    packageTitle?: string;
+    price?: number;
+    travelDate?: string;
+    travellers?: string;
+    travelType?: string;
+  }) => {
     setEnquiryDetails(options || {});
     setEnquiryOpen(true);
   };
@@ -50,6 +67,9 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
             initialDestination={enquiryDetails.destination}
             initialPackageTitle={enquiryDetails.packageTitle}
             packagePrice={enquiryDetails.price}
+            initialTravelDate={enquiryDetails.travelDate}
+            initialTravellers={enquiryDetails.travellers}
+            initialTravelType={enquiryDetails.travelType}
           />
         </div>
       </EnquiryContext.Provider>
