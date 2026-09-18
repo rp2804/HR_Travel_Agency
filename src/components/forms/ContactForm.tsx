@@ -24,8 +24,16 @@ export const ContactForm: React.FC = () => {
     if (!formData.name.trim()) errs.name = "Full name is required";
     if (!formData.phone.trim()) {
       errs.phone = "Phone number is required";
-    } else if (formData.phone.replace(/[^\d]/g, "").length < 10) {
-      errs.phone = "Enter a valid 10-digit number";
+    } else {
+      const digitsOnly = formData.phone.replace(/[^\d]/g, "");
+      // Accept 10 digits (Indian mobile) or 12 digits (with 91 country code)
+      if (digitsOnly.length < 10) {
+        errs.phone = "Enter a valid phone number";
+      } else if (digitsOnly.length === 12 && !digitsOnly.startsWith("91")) {
+        errs.phone = "Enter a valid Indian phone number";
+      } else if (digitsOnly.length > 12) {
+        errs.phone = "Phone number is too long";
+      }
     }
     setErrors(errs);
     return Object.keys(errs).length === 0;
@@ -43,15 +51,15 @@ export const ContactForm: React.FC = () => {
 
   if (submitted) {
     return (
-      <div className="bg-white rounded-2xl p-8 shadow-card border border-slate-100 text-center space-y-5 animate-fadeIn">
-        <div className="w-16 h-16 bg-green-50 text-green-600 rounded-full flex items-center justify-center mx-auto">
+      <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-card border border-slate-100 dark:border-slate-700 text-center space-y-5 animate-fadeIn">
+        <div className="w-16 h-16 bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center mx-auto">
           <CheckCircle2 className="w-10 h-10" />
         </div>
-        <h3 className="text-2xl font-bold font-serif text-slate-900">
+        <h3 className="text-2xl font-bold font-serif text-slate-900 dark:text-white">
           Ready to Connect!
         </h3>
-        <p className="text-slate-600 max-w-md mx-auto text-sm leading-relaxed">
-          Thanks, <strong className="text-slate-800">{formData.name}</strong>! Your travel details are ready. Click below to open WhatsApp and chat with our travel planner for instant quotes.
+        <p className="text-slate-600 dark:text-slate-300 max-w-md mx-auto text-sm leading-relaxed">
+          Thanks, <strong className="text-slate-800 dark:text-slate-200">{formData.name}</strong>! Your travel details are ready. Click below to open WhatsApp and chat with our travel planner for instant quotes.
         </p>
 
         <div className="pt-2 max-w-sm mx-auto">
@@ -66,15 +74,15 @@ export const ContactForm: React.FC = () => {
           </a>
         </div>
 
-        <div className="border-t border-slate-100 pt-5 mt-5 flex flex-wrap justify-center gap-4 text-xs text-slate-600">
+        <div className="border-t border-slate-100 dark:border-slate-700 pt-5 mt-5 flex flex-wrap justify-center gap-4 text-xs text-slate-600 dark:text-slate-300">
           <a
             href={`tel:${siteConfig.contact.phone}`}
             className="flex items-center gap-1.5 hover:text-brand-accent transition-colors"
           >
-            <Phone className="w-4 h-4 text-brand-navy" />
+            <Phone className="w-4 h-4 text-brand-navy dark:text-brand-accent" />
             <span>Call {siteConfig.contact.phoneFormatted}</span>
           </a>
-          <span className="text-slate-300">•</span>
+          <span className="text-slate-300 dark:text-slate-600">•</span>
           <a
             href={`mailto:${siteConfig.contact.email}`}
             className="flex items-center gap-1.5 hover:text-brand-accent transition-colors"
@@ -87,7 +95,7 @@ export const ContactForm: React.FC = () => {
         <button
           type="button"
           onClick={() => setSubmitted(false)}
-          className="text-xs text-slate-400 hover:text-slate-600 underline pt-3 block mx-auto"
+          className="text-xs text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 underline pt-3 block mx-auto"
         >
           Send another message
         </button>
@@ -98,20 +106,20 @@ export const ContactForm: React.FC = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white rounded-2xl p-6 sm:p-8 shadow-card border border-slate-100 space-y-4"
+      className="bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 shadow-card border border-slate-100 dark:border-slate-700 space-y-4"
     >
-      <div className="border-b border-slate-100 pb-4 mb-2">
-        <h3 className="text-xl font-bold font-serif text-slate-900">
+      <div className="border-b border-slate-100 dark:border-slate-700 pb-4 mb-2">
+        <h3 className="text-xl font-bold font-serif text-slate-900 dark:text-white">
           Send Us an Enquiry
         </h3>
-        <p className="text-xs sm:text-sm text-slate-500 mt-1">
+        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
           Share your travel plans and we'll connect with you on WhatsApp for instant assistance.
         </p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+          <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
             Full Name *
           </label>
           <input
@@ -120,15 +128,15 @@ export const ContactForm: React.FC = () => {
             placeholder="e.g. Anand Kumar"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            className={`w-full px-4 py-2.5 rounded-xl border text-sm text-slate-800 focus:outline-none focus:ring-2 ${
-              errors.name ? "border-red-400 focus:ring-red-200" : "border-slate-200 focus:ring-brand-accent/30 focus:border-brand-accent"
+            className={`w-full px-4 py-2.5 rounded-xl border text-sm text-slate-800 dark:text-slate-100 dark:bg-slate-800 focus:outline-none focus:ring-2 ${
+              errors.name ? "border-red-400 focus:ring-red-200" : "border-slate-200 dark:border-slate-600 focus:ring-brand-accent/30 focus:border-brand-accent"
             }`}
           />
           {errors.name && <p className="text-xs text-red-500 mt-1">{errors.name}</p>}
         </div>
 
         <div>
-          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+          <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
             Phone / WhatsApp *
           </label>
           <input
@@ -137,8 +145,8 @@ export const ContactForm: React.FC = () => {
             placeholder="+91 8682957486"
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-            className={`w-full px-4 py-2.5 rounded-xl border text-sm text-slate-800 focus:outline-none focus:ring-2 ${
-              errors.phone ? "border-red-400 focus:ring-red-200" : "border-slate-200 focus:ring-brand-accent/30 focus:border-brand-accent"
+            className={`w-full px-4 py-2.5 rounded-xl border text-sm text-slate-800 dark:text-slate-100 dark:bg-slate-800 focus:outline-none focus:ring-2 ${
+              errors.phone ? "border-red-400 focus:ring-red-200" : "border-slate-200 dark:border-slate-600 focus:ring-brand-accent/30 focus:border-brand-accent"
             }`}
           />
           {errors.phone && <p className="text-xs text-red-500 mt-1">{errors.phone}</p>}
@@ -147,7 +155,7 @@ export const ContactForm: React.FC = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+          <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
             Email Address
           </label>
           <input
@@ -155,12 +163,12 @@ export const ContactForm: React.FC = () => {
             placeholder="anand@example.com"
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-accent/30 focus:border-brand-accent"
+            className="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-600 text-sm text-slate-800 dark:text-slate-100 dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-accent/30 focus:border-brand-accent"
           />
         </div>
 
         <div>
-          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+          <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
             Desired Destination
           </label>
           <input
@@ -168,32 +176,32 @@ export const ContactForm: React.FC = () => {
             placeholder="e.g. Ooty, Munnar, Kodaikanal, etc."
             value={formData.destination}
             onChange={(e) => setFormData({ ...formData, destination: e.target.value })}
-            className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-accent/30 focus:border-brand-accent"
+            className="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-600 text-sm text-slate-800 dark:text-slate-100 dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-accent/30 focus:border-brand-accent"
           />
         </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+          <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
             Approx. Travel Date
           </label>
           <input
             type="date"
             value={formData.travelDate}
             onChange={(e) => setFormData({ ...formData, travelDate: e.target.value })}
-            className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-accent/30 focus:border-brand-accent"
+            className="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-600 text-sm text-slate-800 dark:text-slate-100 dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-accent/30 focus:border-brand-accent"
           />
         </div>
 
         <div>
-          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+          <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
             Number of Travellers
           </label>
           <select
             value={formData.travellers}
             onChange={(e) => setFormData({ ...formData, travellers: e.target.value })}
-            className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-800 bg-white focus:outline-none focus:ring-2 focus:ring-brand-accent/30 focus:border-brand-accent"
+            className="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-600 text-sm text-slate-800 dark:text-slate-100 bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-accent/30 focus:border-brand-accent"
           >
             <option value="1 Adult (Solo)">1 Adult (Solo)</option>
             <option value="2 Adults (Couple)">2 Adults (Couple)</option>
@@ -205,7 +213,7 @@ export const ContactForm: React.FC = () => {
       </div>
 
       <div>
-        <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+        <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
           Notes & Requirements
         </label>
         <textarea
@@ -213,7 +221,7 @@ export const ContactForm: React.FC = () => {
           placeholder="Tell us about vehicle preference (Innova/Sedan), hotel category (3-star / 4-star / luxury resort), or specific spots you want to cover..."
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-accent/30 focus:border-brand-accent"
+          className="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-600 text-sm text-slate-800 dark:text-slate-100 dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-accent/30 focus:border-brand-accent"
         />
       </div>
 
@@ -224,7 +232,7 @@ export const ContactForm: React.FC = () => {
         <span>Continue to WhatsApp</span>
         <MessageCircle className="w-4 h-4 transition-transform group-hover:translate-x-1" />
       </button>
-      <p className="text-xs text-center text-slate-500 -mt-1">
+      <p className="text-xs text-center text-slate-500 dark:text-slate-400 -mt-1">
         Your details will be sent via WhatsApp for instant response
       </p>
     </form>

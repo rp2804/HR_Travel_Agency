@@ -9,7 +9,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onPlanTrip }) => {
   return (
-    <section className="relative min-h-[92vh] sm:min-h-[95vh] flex items-center justify-center bg-slate-950 overflow-hidden pt-20 pb-16">
+    <section className="relative min-h-[75vh] sm:min-h-[85vh] lg:min-h-[92vh] flex items-center justify-center bg-slate-950 overflow-hidden pt-20 pb-12 sm:pb-16">
       {/* Background Image with subtle zoom and optimized priority */}
       <div className="absolute inset-0 z-0">
         <img

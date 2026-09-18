@@ -36,19 +36,19 @@ export const About: React.FC = () => {
         <Breadcrumb items={[{ label: "About Us" }]} className="mb-8" />
 
         {/* Section 1: Our Story */}
-        <section className="py-8 sm:py-12">
+        <section className="py-12 sm:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-5">
               <span className="text-xs uppercase font-bold text-brand-accent tracking-wider">
                 Our Roots
               </span>
-              <h2 className="text-3xl sm:text-4xl font-bold font-serif text-slate-900 leading-tight">
+              <h2 className="text-3xl sm:text-4xl font-bold font-serif text-slate-900 dark:text-white leading-tight">
                 Born From a Deep Love for South India
               </h2>
-              <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+              <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
                 Established in {siteConfig.establishedYear}, {siteConfig.agencyName} was born out of a realization: too many travelers visiting Tamil Nadu, Kerala, and Karnataka were getting trapped in rushed group tours, rigid bus timetables, and unexpected hidden driver costs.
               </p>
-              <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+              <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
                 We set out to build something different — a boutique travel agency rooted in local culture where every trip is private, paced for genuine relaxation, and handled by knowledgeable drivers who treat travellers like honored guests.
               </p>
             </div>
@@ -64,7 +64,7 @@ export const About: React.FC = () => {
         </section>
 
         {/* Section 2: What We Do */}
-        <section className="py-12 sm:py-16 border-t border-slate-200">
+        <section className="py-12 sm:py-16 border-t border-slate-200 dark:border-slate-800">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="text-xs uppercase font-bold text-brand-accent tracking-wider">
               Core Expertise
@@ -78,38 +78,38 @@ export const About: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            <div className="bg-white rounded-2xl p-6 sm:p-7 shadow-card border border-slate-100">
+            <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-7 shadow-card border border-slate-100 dark:border-slate-700">
               <div className="w-12 h-12 rounded-xl bg-orange-50 text-brand-accent flex items-center justify-center mb-4">
                 <Compass className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold font-serif text-slate-900 mb-2">
+              <h3 className="text-lg font-bold font-serif text-slate-900 dark:text-white mb-2">
                 Custom Leisure Itineraries
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                 Handcrafted couple getaways and family vacations across Ooty, Kodaikanal, Munnar, Coorg, and Wayanad with verified hotel stays.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 sm:p-7 shadow-card border border-slate-100">
+            <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-7 shadow-card border border-slate-100 dark:border-slate-700">
               <div className="w-12 h-12 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center mb-4">
                 <Shield className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold font-serif text-slate-900 mb-2">
+              <h3 className="text-lg font-bold font-serif text-slate-900 dark:text-white mb-2">
                 Spiritual Temple Trails
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                 Special darshan assistance, sacred theertham rituals, and convenient logistics for Madurai, Rameswaram, Thanjavur, and Srirangam.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 sm:p-7 shadow-card border border-slate-100">
+            <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-7 shadow-card border border-slate-100 dark:border-slate-700">
               <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center mb-4">
                 <Users className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold font-serif text-slate-900 mb-2">
+              <h3 className="text-lg font-bold font-serif text-slate-900 dark:text-white mb-2">
                 Private Fleet & Driver Network
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                 Clean, sanitized private vehicles with vetted, polite chauffeurs experienced in ghat roads and regional sightseeing.
               </p>
             </div>
@@ -117,16 +117,16 @@ export const About: React.FC = () => {
         </section>
 
         {/* Section 3: Our Travel Philosophy */}
-        <section className="py-12 sm:py-16 border-t border-slate-200">
-          <div className="bg-brand-sand rounded-3xl p-8 sm:p-12 border border-slate-100">
+        <section className="py-12 sm:py-16 border-t border-slate-200 dark:border-slate-800">
+          <div className="bg-brand-sand dark:bg-slate-800 rounded-3xl p-8 sm:p-12 border border-slate-100 dark:border-slate-700">
             <div className="max-w-3xl mx-auto text-center space-y-4">
               <span className="text-xs uppercase font-bold text-brand-accent tracking-wider">
                 Our Values
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold font-serif text-slate-900">
+              <h2 className="text-2xl sm:text-3xl font-bold font-serif text-slate-900 dark:text-white">
                 Our Travel Philosophy
               </h2>
-              <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
                 "A holiday should replenish you, not exhaust you. We prioritize quality over quantity: fewer rushed stops, more time sipping fresh estate coffee, walking in misty pine woods, and soaking in sacred temple quietude."
               </p>
             </div>

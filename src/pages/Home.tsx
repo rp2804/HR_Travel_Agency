@@ -65,7 +65,7 @@ export const Home: React.FC = () => {
       <QuickSearchBar onSearch={handleQuickSearch} />
 
       {/* SECTION 3: POPULAR DESTINATIONS */}
-      <section className="py-20 sm:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="South India Destinations"
           title="Explore South India"
@@ -90,7 +90,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* SECTION 4: FEATURED TOUR PACKAGES */}
-      <section className="py-20 sm:py-28 bg-white dark:bg-slate-900 border-y border-slate-100 dark:border-slate-800 transition-colors">
+      <section className="py-16 sm:py-20 bg-white dark:bg-slate-900 border-y border-slate-100 dark:border-slate-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12">
             <div>
@@ -144,7 +144,7 @@ export const Home: React.FC = () => {
       <HowItWorks />
 
       {/* SECTION 9: TESTIMONIALS */}
-      <section className="py-20 sm:py-28 bg-brand-sand dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 transition-colors">
+      <section className="py-16 sm:py-20 bg-brand-sand dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="Traveler Reviews"
@@ -165,7 +165,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* SECTION 10: TRAVEL GALLERY */}
-      <section className="py-20 sm:py-28 bg-white dark:bg-slate-900 border-y border-slate-100 dark:border-slate-800 transition-colors">
+      <section className="py-16 sm:py-20 bg-white dark:bg-slate-900 border-y border-slate-100 dark:border-slate-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12">
             <div>

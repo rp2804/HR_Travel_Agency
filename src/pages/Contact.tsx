@@ -12,7 +12,7 @@ export const Contact: React.FC = () => {
   );
 
   return (
-    <div className="pt-24 pb-20 sm:pb-28">
+    <div className="pt-24 pb-16 sm:pb-20">
       {/* Top Banner */}
       <div className="bg-brand-navy text-white py-16 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
